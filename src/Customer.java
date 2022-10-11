@@ -1,21 +1,7 @@
-public class Customer {
+public class Customer extends People {
 
-    enum Sex {
-        Male,
-        Female
-    }
-    int _id;
-    String firstName, lastName, middleName;
-    int age;
-    Sex type;
-    String phoneNumber;
-
-    public Customer(int _id, String firstName, String lastName, String middleName, int age, Sex type, String phoneNumber) {
-        this._id = _id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.middleName = middleName;
-        this.type = type;
-        this.phoneNumber = phoneNumber;
+    public Customer(int pass_serial,int pass_number, String first_name, String last_name, String middle_name, int age,
+                    Sex sex, String phoneNumber) {
+        super(pass_serial, pass_number, first_name, last_name, middle_name, age, sex, phoneNumber);
     }
 }

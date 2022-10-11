@@ -1,21 +1,15 @@
-public class Car {
+public class Car extends Showroom {
 
-    enum CarType {
-        CAR,
-        TRUCK
+    enum Variant {
+        SEDAN,
+        HATCHBACK,
+        STATION_WAGON
     }
 
-    int _id;
-    CarType type;
-    String brand, model, firstName, lastName;
+    Variant variant;
 
-    public Car(int _id, CarType type, String brand, String model, String firstName, String lastName) {
-        this._id = _id;
-        this.type = type;
-        this.brand = brand;
-        this.model = model;
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Car(int vin, CarType type, String brand, String model, Variant variant) {
+        super(vin, type, brand, model);
+        this.variant = variant;
     }
-
 }
