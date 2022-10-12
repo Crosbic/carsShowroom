@@ -5,14 +5,13 @@ public class People {
         FEMALE
     }
 
-    private String first_name, last_name, middle_name, phone_number;
-    private int passport_serial, passport_number, age;
+    private String passport, first_name, last_name, middle_name, phone_number;
+    private int age;
     private Sex sex;
 
-    public People(int passport_serial, int passport_number, String first_name, String last_name, String middle_name,
+    public People(String passport, String first_name, String last_name, String middle_name,
                   int age, Sex sex, String phone_number) {
-        this.passport_serial = passport_serial;
-        this.passport_number = passport_number;
+        this.passport = passport;
         this.first_name = first_name;
         this.last_name = last_name;
         this.middle_name = middle_name;
@@ -21,20 +20,12 @@ public class People {
         this.phone_number = phone_number;
     }
 
-    public int getPassport_serial() {
-        return passport_serial;
+    public String getPassport() {
+        return passport;
     }
 
-    public void setPassport_serial(int passport_serial) {
-        this.passport_serial = passport_serial;
-    }
-
-    public int getPassport_number() {
-        return passport_number;
-    }
-
-    public void setPassport_number(int passport_number) {
-        this.passport_number = passport_number;
+    public void setPassport(String passport) {
+        this.passport = passport;
     }
 
     public int getAge() {

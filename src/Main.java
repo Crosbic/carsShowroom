@@ -12,10 +12,11 @@ public class Main {
                 dotenv.get("USER"),
                 dotenv.get("PASSWORD"));
         System.out.println("Opened database successfully");
-        Staff staff = new Staff(2313, 553334, "Иван", "Мидин",
+        Staff staff = new Staff("2222 222222","Иван", "Мидин",
                 "Олегович", 20, People.Sex.MALE, "+79004003455", Staff.Position.INTERN);
         StaffDAO staffDAO = new StaffDAO();
         staffDAO.insertStaff(staff, connection);
+        staffDAO.deleteStaff(staff.getPassport(), connection);
         connection.close();
     }
 }

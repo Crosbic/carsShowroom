@@ -8,9 +8,9 @@ public class Staff extends People {
 
     Position position;
 
-    public Staff(int pass_serial,int pass_number, String first_name, String last_name, String middle_name,
+    public Staff(String passport, String first_name, String last_name, String middle_name,
                  int age, Sex sex, String phone_number, Position position) {
-        super(pass_serial, pass_number, first_name, last_name, middle_name, age, sex, phone_number);
+        super(passport, first_name, last_name, middle_name, age, sex, phone_number);
         this.position = position;
     }
 
