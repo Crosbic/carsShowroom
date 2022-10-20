@@ -1,10 +1,5 @@
 public class Showroom {
 
-     enum CarType {
-          CAR,
-          TRUCK
-     }
-
      int vin;
      CarType type;
      String brand;

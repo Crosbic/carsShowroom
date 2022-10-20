@@ -1,6 +1,5 @@
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 
 public class StaffDAO {
 
@@ -33,5 +32,26 @@ public class StaffDAO {
         preparedStatement.setString(7, staff.getPosition().toString());
         preparedStatement.setString(8, staff.getPassport());
         preparedStatement.executeUpdate();
+    }
+
+    public ArrayList<Staff> getStaff(Connection connection) throws SQLException {
+        PreparedStatement preparedStatement = connection.prepareStatement("select * from staff;");
+        ResultSet rs = preparedStatement.executeQuery();
+        ArrayList<Staff> staffList = new ArrayList<>();
+
+        while (rs.next()) {
+                String passport = rs.getString("passport");
+                String first_name = rs.getString("First_name");
+                String last_name = rs.getString("last_name");
+                String middle_name = rs.getString("middle_name");
+                int age = rs.getInt("age");
+                People.Sex sex = People.Sex.valueOf(rs.getString("sex"));
+                String phone_number = rs.getString("phone_number");
+                Staff.Position position = Staff.Position.valueOf(rs.getString("position"));
+            Staff staff_list = new Staff(passport, first_name, last_name, middle_name, age, sex, phone_number, position);
+            staffList.add(staff_list);
+        }
+
+        return staffList;
     }
 }
